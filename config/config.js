@@ -5,14 +5,14 @@ module.exports = {
     username: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
     database: "bus_registration_system_database_development",
-    host: "127.0.0.1",
+    host: process.env.POSTGRES_HOST,
     dialect: "postgres",
   },
   production: {
     username: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
     database: "bus_registration_system_database_production",
-    host: "127.0.0.1",
+    host: process.env.POSTGRES_HOST,
     dialect: "postgres",
   },
 };

@@ -1,0 +1,92 @@
+[
+  {
+    "Bus Route": "Rooihuiskraal",
+    "Bus": {
+      "bus_number": 1,
+      "Morning pick up": [
+        {
+          "Pick up number": "1A",
+          "Pick up Name": "Corner of Panorama and Marabou Road",
+          "Pick up Time": "6:22"
+        },
+        {
+          "Pick up number": "1B",
+          "Pick up Name": "Corner of Kolgansstraat and Skimmerstraat",
+          "Pick up Time": "6:30"
+        }
+      ],
+      "Afternoon Drop off": [
+        {
+          "Drop off number": "1A",
+          "Drop off Name": "Corner of Panorama and Marabou Road",
+          "Drop off Time": "14:30"
+        },
+        {
+          "Drop off number": "1B",
+          "Drop off Name": "Corner of Kolgansstraat and Skimmerstraat",
+          "Drop off Time": "14:39"
+        }
+      ]
+    }
+  },
+  {
+    "Bus Route": "Wierdapark",
+    "Bus": {
+      "bus_number": 2,
+      "Morning pick up": [
+        {
+          "Pick up number": "2A",
+          "Pick up Name": "Corner of Reddersburg Street and Mafeking Drive",
+          "Pick up Time": "6:25"
+        },
+        {
+          "Pick up number": "2B",
+          "Pick up Name": "Corner of Theuns van Niekerkstraat and Roosmarynstraat",
+          "Pick up Time": "6:35"
+        }
+      ],
+      "Afternoon Drop off": [
+        {
+          "Drop off number": "2A",
+          "Drop off Name": "Corner of Reddersburg Street and Mafeking Drive",
+          "Drop off Time": "14:25"
+        },
+        {
+          "Drop off number": "2B",
+          "Drop off Name": "Corner of Theuns van Niekerkstraat and Roosmarynstraat",
+          "Drop off Time": "14:30"
+        }
+      ]
+    }
+  },
+  {
+    "Bus Route": "Centurion",
+    "Bus": {
+      "bus_number": 3,
+      "Morning pick up": [
+        {
+          "Pick up number": "3A",
+          "Pick up Name": "Corner of Jasper Drive and Tieroog Street",
+          "Pick up Time": "6:20"
+        },
+        {
+          "Pick up number": "3B",
+          "Pick up Name": "Corner of Louise Street and Von Willich Drive",
+          "Pick up Time": "6:40"
+        }
+      ],
+      "Afternoon Drop off": [
+        {
+          "Drop off number": "3A",
+          "Drop off Name": "Corner of Jasper Drive and Tieroog Street",
+          "Drop off Time": "14:30"
+        },
+        {
+          "Drop off number": "3B",
+          "Drop off Name": "Corner of Louise Street and Von Willich Drive",
+          "Drop off Time": "14:40"
+        }
+      ]
+    }
+  }
+]

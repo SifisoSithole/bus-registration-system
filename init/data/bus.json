@@ -1,0 +1,14 @@
+[
+  {
+    "bus_number": 1,
+    "capacity": 35
+  },
+  {
+    "bus_number": 2,
+    "capacity": 8
+  },
+  {
+    "bus_number": 3,
+    "capacity": 15
+  }
+]

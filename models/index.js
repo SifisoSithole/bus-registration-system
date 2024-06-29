@@ -1,5 +1,3 @@
-"use strict";
-
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
@@ -21,11 +19,23 @@ if (config.use_env_variable) {
   );
 }
 
-fs.readdirSync(__dirname)
+const tablesOrder = [
+  "student.js",
+  "parent.js",
+  "admin.js",
+  "bus.js",
+  "assigned_students.js",
+  "waiting_list.js",
+  "station.js",
+  "route.js",
+  "pick_up.js",
+  "drop_off.js",
+];
+
+tablesOrder
   .filter((file) => {
     return (
-      file.indexOf(".") !== 0 &&
-      file !== basename &&
+      fs.existsSync(path.join(__dirname, file)) &&
       file.slice(-3) === ".js" &&
       file.indexOf(".test.js") === -1
     );

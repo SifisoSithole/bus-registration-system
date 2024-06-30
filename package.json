@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "importData": "node init/import_data.js",
+    "backup": "./init/back_up/back_up.sh",
+    "restore": "./init/back_up/restore.sh"
   },
   "author": "Sifiso Sithole",
   "license": "ISC",

@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["node", "init/index.js"]
+CMD ["npm", "run", "importData"]

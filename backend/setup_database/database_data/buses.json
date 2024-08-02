@@ -1,0 +1,17 @@
+[
+  {
+    "bus_number": 1,
+    "capacity": 35,
+    "available_seats": 35
+  },
+  {
+    "bus_number": 2,
+    "capacity": 8,
+    "available_seats": 8
+  },
+  {
+    "bus_number": 3,
+    "capacity": 15,
+    "available_seats": 15
+  }
+]

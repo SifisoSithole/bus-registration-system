@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { db } = require("../models");
+const { db } = require("../src/models/index");
 const {
   Route,
   Bus,
@@ -10,6 +10,7 @@ const {
   Student,
   AssignedStudents,
   WaitingList,
+  Administrator,
 } = db;
 
 async function addPickUpAndDropOffPoints(routeId, pickUps, dropOffs) {
@@ -65,9 +66,15 @@ async function addPickUpAndDropOffPoints(routeId, pickUps, dropOffs) {
 }
 
 async function createBusesAndRoutes() {
-  const busesData = fs.readFileSync("init/data/buses.json", "utf8");
+  const busesData = fs.readFileSync(
+    "setup_database/database_data/buses.json",
+    "utf8"
+  );
   const buses = JSON.parse(busesData);
-  const routesData = fs.readFileSync("init/data/routes.json", "utf8");
+  const routesData = fs.readFileSync(
+    "setup_database/database_data/routes.json",
+    "utf8"
+  );
   const routes = JSON.parse(routesData);
 
   try {
@@ -111,7 +118,10 @@ async function createParentAndStudentUsers() {
     try {
       await Parent.sync({ force: true });
       console.log("Creating parent users");
-      const parentsData = fs.readFileSync("init/data/parents.json", "utf8");
+      const parentsData = fs.readFileSync(
+        "setup_database/database_data/parents.json",
+        "utf8"
+      );
       const parents = JSON.parse(parentsData);
       await Parent.bulkCreate(parents);
       console.log("Parent users added successfully");
@@ -122,7 +132,10 @@ async function createParentAndStudentUsers() {
     try {
       await Student.sync({ force: true });
       console.log("Creating student users");
-      const studentsData = fs.readFileSync("init/data/students.json", "utf8");
+      const studentsData = fs.readFileSync(
+        "setup_database/database_data/students.json",
+        "utf8"
+      );
       const students = JSON.parse(studentsData);
       await Student.bulkCreate(students);
       console.log("Student users added successfully");
@@ -159,6 +172,10 @@ async function createAssignedStudentsAndWaitingList() {
           }));
 
           await AssignedStudents.bulkCreate(assignedStudents);
+          await Bus.update(
+            { available_seats: bus.capacity - students.length },
+            { where: { id: bus.id } }
+          );
         }
 
         offset += pageSize;
@@ -208,6 +225,7 @@ async function createAssignedStudentsAndWaitingList() {
 }
 
 async function setupDatabase() {
+  Administrator.sync({ force: true });
   try {
     await createBusesAndRoutes();
     await createParentAndStudentUsers();

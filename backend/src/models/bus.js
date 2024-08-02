@@ -16,10 +16,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      used_capacity: {
+      available_seats: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 0,
       },
     },
     { tableName: "buses" }

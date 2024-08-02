@@ -17,8 +17,8 @@ services:
     ports:
       - "8080:8080"
 
-  app:
-    build: .
+  backend:
+    build: ./backend
     depends_on:
       - postgres
     ports:
@@ -29,4 +29,4 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       NODE_ENV: ${NODE_ENV}
     volumes:
-      - .:/usr/src/app
+      - ./backend:/usr/src/app
